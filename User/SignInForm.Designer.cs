@@ -94,6 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(393, 249);
             Controls.Add(btnSwitchToSignUp);
             Controls.Add(btnSignIn);

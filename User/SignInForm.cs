@@ -8,8 +8,6 @@ namespace Library
         public SignInForm()
         {
             InitializeComponent();
-            // Additional styling
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -17,9 +15,7 @@ namespace Library
             // Check for admin credentials
             if (txtUsername.Text == "admin" && txtPassword.Text == "password")
             {
-                var adminForm = new AdminForm();
-                adminForm.Show();
-                this.Hide();
+
             }
             // Check for regular user credentials (in a real app, this would be validated against a database)
             else if (!string.IsNullOrWhiteSpace(txtUsername.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))

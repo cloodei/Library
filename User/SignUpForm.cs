@@ -8,8 +8,6 @@ namespace Library
         public SignUpForm()
         {
             InitializeComponent();
-            // Additional styling (background color, etc.)
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

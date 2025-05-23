@@ -1,21 +1,21 @@
-using System;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class MainUserForm : Form
+    public partial class UserBooks : Form
     {
         // Colors
         private readonly Color PrimaryColor = Color.FromArgb(0, 123, 255);
         private readonly Color SecondaryColor = Color.FromArgb(40, 44, 52);
         
-        public MainUserForm()
+        public UserBooks()
         {
             InitializeComponent();
             LoadBooks();
-            SetActiveButton(btnHome);
+            SetActiveButton(btnQuanLySach); // Set Sách Của Tôi as active
         }
 
         private void dgvBooks_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -46,6 +46,28 @@ namespace Library
             {
                 activeButton.BackColor = PrimaryColor;
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnHome);
+            MainUserForm mainUserForm = new MainUserForm();
+            mainUserForm.Show();
+            this.Close(); // Close UserBooks form
+        }
+
+        private void btnQuanLySach_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnQuanLySach);
+            // Already on UserBooks form, no action needed or refresh content if necessary
+        }
+
+        private void btnQuanLyNguoiDung_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(btnQuanLyNguoiDung);
+            UserBorrow userBorrowForm = new UserBorrow();
+            userBorrowForm.Show();
+            this.Close(); // Close UserBooks form
         }
 
         private void LoadBooks()
