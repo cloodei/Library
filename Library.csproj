@@ -29,10 +29,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Admin\Books\" />
-    <Folder Include="Admin\Requests\" />
-    <Folder Include="Admin\Users\" />
-  </ItemGroup>
-
 </Project>
