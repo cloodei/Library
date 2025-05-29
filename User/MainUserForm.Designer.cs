@@ -1,4 +1,4 @@
-﻿namespace Library
+namespace Library
 {
     partial class MainUserForm
     {
@@ -13,8 +13,6 @@
         private Panel panelContent;
         private Panel panelContentHeader;
         private Label lblContentHeader;
-        internal TextBox txtSearch;
-        internal Button btnSearch;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -47,8 +45,6 @@
             panelContent = new Panel();
             panelContentHeader = new Panel();
             lblContentHeader = new Label();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvBooks).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -69,6 +65,7 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvBooks.ColumnHeadersHeight = 29;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
@@ -78,10 +75,12 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvBooks.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBooks.Dock = DockStyle.Fill;
-            dgvBooks.Location = new Point(0, 60);
+            dgvBooks.Location = new Point(0, 80);
+            dgvBooks.Margin = new Padding(3, 4, 3, 4);
             dgvBooks.Name = "dgvBooks";
             dgvBooks.ReadOnly = true;
             dgvBooks.RowHeadersVisible = false;
+            dgvBooks.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(33, 37, 41);
             dataGridViewCellStyle3.Padding = new Padding(15, 5, 15, 5);
@@ -89,7 +88,7 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(33, 37, 41);
             dgvBooks.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvBooks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBooks.Size = new Size(808, 501);
+            dgvBooks.Size = new Size(923, 668);
             dgvBooks.TabIndex = 2;
             dgvBooks.CellMouseEnter += dgvBooks_CellMouseEnter;
             dgvBooks.CellMouseLeave += dgvBooks_CellMouseLeave;
@@ -101,9 +100,10 @@
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnHome.ForeColor = Color.White;
-            btnHome.Location = new Point(3, 169);
+            btnHome.Location = new Point(3, 225);
+            btnHome.Margin = new Padding(3, 4, 3, 4);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(194, 46);
+            btnHome.Size = new Size(222, 61);
             btnHome.TabIndex = 3;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = false;
@@ -115,9 +115,10 @@
             btnQuanLySach.FlatStyle = FlatStyle.Flat;
             btnQuanLySach.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnQuanLySach.ForeColor = Color.White;
-            btnQuanLySach.Location = new Point(3, 225);
+            btnQuanLySach.Location = new Point(3, 300);
+            btnQuanLySach.Margin = new Padding(3, 4, 3, 4);
             btnQuanLySach.Name = "btnQuanLySach";
-            btnQuanLySach.Size = new Size(194, 46);
+            btnQuanLySach.Size = new Size(222, 61);
             btnQuanLySach.TabIndex = 4;
             btnQuanLySach.Text = "Sách Của Tôi";
             btnQuanLySach.UseVisualStyleBackColor = false;
@@ -130,9 +131,10 @@
             btnQuanLyNguoiDung.FlatStyle = FlatStyle.Flat;
             btnQuanLyNguoiDung.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnQuanLyNguoiDung.ForeColor = Color.White;
-            btnQuanLyNguoiDung.Location = new Point(3, 281);
+            btnQuanLyNguoiDung.Location = new Point(3, 375);
+            btnQuanLyNguoiDung.Margin = new Padding(3, 4, 3, 4);
             btnQuanLyNguoiDung.Name = "btnQuanLyNguoiDung";
-            btnQuanLyNguoiDung.Size = new Size(194, 46);
+            btnQuanLyNguoiDung.Size = new Size(222, 61);
             btnQuanLyNguoiDung.TabIndex = 5;
             btnQuanLyNguoiDung.Text = "Các Yêu Cầu Mượn Sách";
             btnQuanLyNguoiDung.UseVisualStyleBackColor = false;
@@ -143,9 +145,9 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.Control;
-            lblTitle.Location = new Point(37, 107);
+            lblTitle.Location = new Point(42, 143);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(131, 37);
+            lblTitle.Size = new Size(164, 46);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Thư Viện";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -160,16 +162,18 @@
             panel1.Controls.Add(btnQuanLyNguoiDung);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 561);
+            panel1.Size = new Size(229, 748);
             panel1.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 12);
+            pictureBox1.Location = new Point(3, 16);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(191, 92);
+            pictureBox1.Size = new Size(218, 123);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -179,21 +183,21 @@
             panelContent.Controls.Add(dgvBooks);
             panelContent.Controls.Add(panelContentHeader);
             panelContent.Dock = DockStyle.Fill;
-            panelContent.Location = new Point(200, 0);
+            panelContent.Location = new Point(229, 0);
+            panelContent.Margin = new Padding(3, 4, 3, 4);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(808, 561);
+            panelContent.Size = new Size(923, 748);
             panelContent.TabIndex = 7;
             // 
             // panelContentHeader
             // 
             panelContentHeader.BackColor = Color.FromArgb(41, 128, 185);
             panelContentHeader.Controls.Add(lblContentHeader);
-            panelContentHeader.Controls.Add(txtSearch);
-            panelContentHeader.Controls.Add(btnSearch);
             panelContentHeader.Dock = DockStyle.Top;
             panelContentHeader.Location = new Point(0, 0);
+            panelContentHeader.Margin = new Padding(3, 4, 3, 4);
             panelContentHeader.Name = "panelContentHeader";
-            panelContentHeader.Size = new Size(808, 60);
+            panelContentHeader.Size = new Size(923, 80);
             panelContentHeader.TabIndex = 0;
             // 
             // lblContentHeader
@@ -201,39 +205,22 @@
             lblContentHeader.AutoSize = true;
             lblContentHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblContentHeader.ForeColor = Color.White;
-            lblContentHeader.Location = new Point(15, 15);
+            lblContentHeader.Location = new Point(17, 20);
             lblContentHeader.Name = "lblContentHeader";
-            lblContentHeader.Size = new Size(105, 30);
+            lblContentHeader.Size = new Size(131, 37);
             lblContentHeader.TabIndex = 0;
             lblContentHeader.Text = "Kho sách";
             // 
-            // txtSearch
-            // 
-            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtSearch.Location = new Point(808, 18);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(150, 23);
-            txtSearch.TabIndex = 1;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.Location = new Point(808, 15);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(35, 30);
-            btnSearch.TabIndex = 2;
-            btnSearch.Text = "Go";
-            btnSearch.UseVisualStyleBackColor = true;
-            // 
             // MainUserForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1008, 561);
+            ClientSize = new Size(1152, 748);
             Controls.Add(panelContent);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1024, 600);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1168, 784);
             Name = "MainUserForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Liberate";
