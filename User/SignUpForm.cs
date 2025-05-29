@@ -30,5 +30,10 @@ namespace Library
             signInForm.Show();
             this.Hide();
         }
+
+        private void SignUpForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

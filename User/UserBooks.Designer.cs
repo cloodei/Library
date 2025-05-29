@@ -13,8 +13,6 @@
         private Panel panelContent;
         private Panel panelContentHeader;
         private Label lblContentHeader;
-        internal TextBox txtSearch;
-        internal Button btnSearch;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -43,12 +41,11 @@
             btnQuanLyNguoiDung = new Button();
             lblTitle = new Label();
             panel1 = new Panel();
+            btnSignOut = new Button();
             pictureBox1 = new PictureBox();
             panelContent = new Panel();
             panelContentHeader = new Panel();
             lblContentHeader = new Label();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvBooks).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -69,6 +66,7 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvBooks.ColumnHeadersHeight = 29;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
@@ -82,6 +80,7 @@
             dgvBooks.Name = "dgvBooks";
             dgvBooks.ReadOnly = true;
             dgvBooks.RowHeadersVisible = false;
+            dgvBooks.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(33, 37, 41);
             dataGridViewCellStyle3.Padding = new Padding(15, 5, 15, 5);
@@ -107,7 +106,7 @@
             btnHome.TabIndex = 3;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = false;
-            btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            btnHome.Click += btnHome_Click;
             // 
             // btnQuanLySach
             // 
@@ -122,7 +121,7 @@
             btnQuanLySach.TabIndex = 4;
             btnQuanLySach.Text = "Sách Của Tôi";
             btnQuanLySach.UseVisualStyleBackColor = false;
-            btnQuanLySach.Click += new System.EventHandler(this.btnQuanLySach_Click);
+            btnQuanLySach.Click += btnQuanLySach_Click;
             // 
             // btnQuanLyNguoiDung
             // 
@@ -137,7 +136,7 @@
             btnQuanLyNguoiDung.TabIndex = 5;
             btnQuanLyNguoiDung.Text = "Các Yêu Cầu Mượn Sách";
             btnQuanLyNguoiDung.UseVisualStyleBackColor = false;
-            btnQuanLyNguoiDung.Click += new System.EventHandler(this.btnQuanLyNguoiDung_Click);
+            btnQuanLyNguoiDung.Click += btnQuanLyNguoiDung_Click;
             // 
             // lblTitle
             // 
@@ -154,6 +153,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(52, 73, 94);
+            panel1.Controls.Add(btnSignOut);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(btnHome);
@@ -164,6 +164,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 561);
             panel1.TabIndex = 4;
+            // 
+            // btnSignOut
+            // 
+            btnSignOut.BackColor = Color.FromArgb(41, 128, 185);
+            btnSignOut.FlatAppearance.BorderSize = 0;
+            btnSignOut.FlatStyle = FlatStyle.Flat;
+            btnSignOut.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSignOut.ForeColor = Color.White;
+            btnSignOut.Location = new Point(3, 503);
+            btnSignOut.Name = "btnSignOut";
+            btnSignOut.Size = new Size(194, 46);
+            btnSignOut.TabIndex = 11;
+            btnSignOut.Text = "Đăng xuất";
+            btnSignOut.UseVisualStyleBackColor = false;
+            btnSignOut.Click += btnSignOut_Click;
             // 
             // pictureBox1
             // 
@@ -189,8 +204,6 @@
             // 
             panelContentHeader.BackColor = Color.FromArgb(41, 128, 185);
             panelContentHeader.Controls.Add(lblContentHeader);
-            panelContentHeader.Controls.Add(txtSearch);
-            panelContentHeader.Controls.Add(btnSearch);
             panelContentHeader.Dock = DockStyle.Top;
             panelContentHeader.Location = new Point(0, 0);
             panelContentHeader.Name = "panelContentHeader";
@@ -208,24 +221,6 @@
             lblContentHeader.TabIndex = 0;
             lblContentHeader.Text = "Sách hiện có";
             // 
-            // txtSearch
-            // 
-            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtSearch.Location = new Point(808, 18);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(150, 23);
-            txtSearch.TabIndex = 1;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.Location = new Point(808, 15);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(35, 30);
-            btnSearch.TabIndex = 2;
-            btnSearch.Text = "Go";
-            btnSearch.UseVisualStyleBackColor = true;
-            // 
             // UserBooks
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -234,10 +229,11 @@
             Controls.Add(panelContent);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1024, 600);
+            MinimumSize = new Size(1024, 548);
             Name = "UserBooks";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Liberate";
+            FormClosed += UserBooks_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvBooks).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -247,5 +243,6 @@
             panelContentHeader.PerformLayout();
             ResumeLayout(false);
         }
+        internal Button btnSignOut;
     }
 }

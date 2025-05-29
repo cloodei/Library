@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -15,19 +15,6 @@ namespace Library
         {
             InitializeComponent();
             SetActiveButton(btnQuanLyNguoiDung);
-        }
-
-        private void dgvBooks_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                dgvBooks.Cursor = Cursors.Hand;
-            }
-        }
-
-        private void dgvBooks_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvBooks.Cursor = Cursors.Default;
         }
 
         private void SetActiveButton(Button activeButton)
@@ -60,6 +47,22 @@ namespace Library
             var bks = new Books();
             bks.Show();
             this.Hide();
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                var f = new SignInForm();
+                f.Show();
+            }
+        }
+
+        private void Users_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

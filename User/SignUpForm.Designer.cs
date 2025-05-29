@@ -167,6 +167,7 @@
             Name = "SignUpForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "lib dk";
+            FormClosed += SignUpForm_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -7,15 +7,14 @@ namespace Library
 {
     public partial class UserBorrow : Form
     {
-        // Colors
         private readonly Color PrimaryColor = Color.FromArgb(0, 123, 255);
         private readonly Color SecondaryColor = Color.FromArgb(40, 44, 52);
-        
+
         public UserBorrow()
         {
             InitializeComponent();
             LoadBooks();
-            SetActiveButton(btnQuanLyNguoiDung); // Set Các Yêu Cầu Mượn Sách as active
+            SetActiveButton(btnQuanLyNguoiDung);
         }
 
         private void dgvBooks_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -33,7 +32,6 @@ namespace Library
 
         private void SetActiveButton(Button activeButton)
         {
-            // Reset all buttons in the flow layout panel
             foreach (Control control in panel1.Controls)
             {
                 if (control is Button button)
@@ -41,7 +39,6 @@ namespace Library
                     button.BackColor = SecondaryColor;
                 }
             }
-            // Set active button appearance
             if (activeButton != null)
             {
                 activeButton.BackColor = PrimaryColor;
@@ -51,9 +48,9 @@ namespace Library
         private void btnHome_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnHome);
-            MainUserForm mainUserForm = new MainUserForm();
+            var mainUserForm = new MainUserForm();
             mainUserForm.Show();
-            this.Close(); // Close UserBorrow form
+            this.Close();
         }
 
         private void btnQuanLySach_Click(object sender, EventArgs e)
@@ -61,57 +58,55 @@ namespace Library
             SetActiveButton(btnQuanLySach);
             UserBooks userBooksForm = new UserBooks();
             userBooksForm.Show();
-            this.Close(); // Close UserBorrow form
+            this.Close();
         }
 
         private void btnQuanLyNguoiDung_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnQuanLyNguoiDung);
-            // Already on UserBorrow form, no action needed or refresh content if necessary
         }
 
         private void LoadBooks()
         {
-            // Sample data - replace with actual data access
             var books = new[]
             {
-                new { 
+                new {
                     Cover = (Image)null,
-                    Title = "The Great Gatsby", 
-                    Author = "F. Scott Fitzgerald", 
-                    Published = new DateTime(1925, 4, 10), 
+                    Title = "The Great Gatsby",
+                    Author = "F. Scott Fitzgerald",
+                    Published = new DateTime(1925, 4, 10),
                     Status = "Available",
                     Actions = "View Details"
                 },
-                new { 
+                new {
                     Cover = (Image)null,
-                    Title = "To Kill a Mockingbird", 
-                    Author = "Harper Lee", 
-                    Published = new DateTime(1960, 7, 11), 
+                    Title = "To Kill a Mockingbird",
+                    Author = "Harper Lee",
+                    Published = new DateTime(1960, 7, 11),
                     Status = "Available",
                     Actions = "View Details"
                 },
-                new { 
+                new {
                     Cover = (Image)null,
-                    Title = "1984", 
-                    Author = "George Orwell", 
-                    Published = new DateTime(1949, 6, 8), 
+                    Title = "1984",
+                    Author = "George Orwell",
+                    Published = new DateTime(1949, 6, 8),
                     Status = "Borrowed",
                     Actions = "View Details"
                 },
-                new { 
+                new {
                     Cover = (Image)null,
-                    Title = "Pride and Prejudice", 
-                    Author = "Jane Austen", 
-                    Published = new DateTime(1813, 1, 28), 
+                    Title = "Pride and Prejudice",
+                    Author = "Jane Austen",
+                    Published = new DateTime(1813, 1, 28),
                     Status = "Available",
                     Actions = "View Details"
                 },
-                new { 
+                new {
                     Cover = (Image)null,
-                    Title = "The Hobbit", 
-                    Author = "J.R.R. Tolkien", 
-                    Published = new DateTime(1937, 9, 21), 
+                    Title = "The Hobbit",
+                    Author = "J.R.R. Tolkien",
+                    Published = new DateTime(1937, 9, 21),
                     Status = "Available",
                     Actions = "View Details"
                 },
@@ -134,6 +129,22 @@ namespace Library
                 dgvBooks.Columns["Actions"].Width = 120;
                 dgvBooks.Columns["Published"].Width = 120;
             }
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                var f = new SignInForm();
+                f.Show();
+            }
+        }
+
+        private void UserBorrow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -12,12 +12,12 @@ namespace Library
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            // Check for admin credentials
-            if (txtUsername.Text == "admin" && txtPassword.Text == "password")
+            if (txtUsername.Text == "1" && txtPassword.Text == "1")
             {
-
+                var br = new Users();
+                br.Show();
+                this.Hide();
             }
-            // Check for regular user credentials (in a real app, this would be validated against a database)
             else if (!string.IsNullOrWhiteSpace(txtUsername.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 var mainUserForm = new MainUserForm();

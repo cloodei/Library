@@ -1,4 +1,4 @@
-namespace Library
+﻿namespace Library
 {
     partial class MainUserForm
     {
@@ -41,6 +41,7 @@ namespace Library
             btnQuanLyNguoiDung = new Button();
             lblTitle = new Label();
             panel1 = new Panel();
+            btnSignOut = new Button();
             pictureBox1 = new PictureBox();
             panelContent = new Panel();
             panelContentHeader = new Panel();
@@ -75,8 +76,7 @@ namespace Library
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvBooks.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBooks.Dock = DockStyle.Fill;
-            dgvBooks.Location = new Point(0, 80);
-            dgvBooks.Margin = new Padding(3, 4, 3, 4);
+            dgvBooks.Location = new Point(0, 60);
             dgvBooks.Name = "dgvBooks";
             dgvBooks.ReadOnly = true;
             dgvBooks.RowHeadersVisible = false;
@@ -88,7 +88,7 @@ namespace Library
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(33, 37, 41);
             dgvBooks.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvBooks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBooks.Size = new Size(923, 668);
+            dgvBooks.Size = new Size(808, 501);
             dgvBooks.TabIndex = 2;
             dgvBooks.CellMouseEnter += dgvBooks_CellMouseEnter;
             dgvBooks.CellMouseLeave += dgvBooks_CellMouseLeave;
@@ -100,10 +100,9 @@ namespace Library
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnHome.ForeColor = Color.White;
-            btnHome.Location = new Point(3, 225);
-            btnHome.Margin = new Padding(3, 4, 3, 4);
+            btnHome.Location = new Point(3, 169);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(222, 61);
+            btnHome.Size = new Size(194, 46);
             btnHome.TabIndex = 3;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = false;
@@ -115,10 +114,9 @@ namespace Library
             btnQuanLySach.FlatStyle = FlatStyle.Flat;
             btnQuanLySach.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnQuanLySach.ForeColor = Color.White;
-            btnQuanLySach.Location = new Point(3, 300);
-            btnQuanLySach.Margin = new Padding(3, 4, 3, 4);
+            btnQuanLySach.Location = new Point(3, 225);
             btnQuanLySach.Name = "btnQuanLySach";
-            btnQuanLySach.Size = new Size(222, 61);
+            btnQuanLySach.Size = new Size(194, 46);
             btnQuanLySach.TabIndex = 4;
             btnQuanLySach.Text = "Sách Của Tôi";
             btnQuanLySach.UseVisualStyleBackColor = false;
@@ -131,10 +129,9 @@ namespace Library
             btnQuanLyNguoiDung.FlatStyle = FlatStyle.Flat;
             btnQuanLyNguoiDung.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnQuanLyNguoiDung.ForeColor = Color.White;
-            btnQuanLyNguoiDung.Location = new Point(3, 375);
-            btnQuanLyNguoiDung.Margin = new Padding(3, 4, 3, 4);
+            btnQuanLyNguoiDung.Location = new Point(3, 281);
             btnQuanLyNguoiDung.Name = "btnQuanLyNguoiDung";
-            btnQuanLyNguoiDung.Size = new Size(222, 61);
+            btnQuanLyNguoiDung.Size = new Size(194, 46);
             btnQuanLyNguoiDung.TabIndex = 5;
             btnQuanLyNguoiDung.Text = "Các Yêu Cầu Mượn Sách";
             btnQuanLyNguoiDung.UseVisualStyleBackColor = false;
@@ -145,9 +142,9 @@ namespace Library
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblTitle.ForeColor = SystemColors.Control;
-            lblTitle.Location = new Point(42, 143);
+            lblTitle.Location = new Point(37, 107);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(164, 46);
+            lblTitle.Size = new Size(131, 37);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Thư Viện";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -155,6 +152,7 @@ namespace Library
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(52, 73, 94);
+            panel1.Controls.Add(btnSignOut);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(btnHome);
@@ -162,18 +160,31 @@ namespace Library
             panel1.Controls.Add(btnQuanLyNguoiDung);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(229, 748);
+            panel1.Size = new Size(200, 561);
             panel1.TabIndex = 4;
+            // 
+            // btnSignOut
+            // 
+            btnSignOut.BackColor = Color.FromArgb(41, 128, 185);
+            btnSignOut.FlatAppearance.BorderSize = 0;
+            btnSignOut.FlatStyle = FlatStyle.Flat;
+            btnSignOut.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSignOut.ForeColor = Color.White;
+            btnSignOut.Location = new Point(3, 503);
+            btnSignOut.Name = "btnSignOut";
+            btnSignOut.Size = new Size(194, 46);
+            btnSignOut.TabIndex = 10;
+            btnSignOut.Text = "Đăng xuất";
+            btnSignOut.UseVisualStyleBackColor = false;
+            btnSignOut.Click += btnSignOut_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 16);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(3, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(218, 123);
+            pictureBox1.Size = new Size(191, 92);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -183,10 +194,9 @@ namespace Library
             panelContent.Controls.Add(dgvBooks);
             panelContent.Controls.Add(panelContentHeader);
             panelContent.Dock = DockStyle.Fill;
-            panelContent.Location = new Point(229, 0);
-            panelContent.Margin = new Padding(3, 4, 3, 4);
+            panelContent.Location = new Point(200, 0);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(923, 748);
+            panelContent.Size = new Size(808, 561);
             panelContent.TabIndex = 7;
             // 
             // panelContentHeader
@@ -195,9 +205,8 @@ namespace Library
             panelContentHeader.Controls.Add(lblContentHeader);
             panelContentHeader.Dock = DockStyle.Top;
             panelContentHeader.Location = new Point(0, 0);
-            panelContentHeader.Margin = new Padding(3, 4, 3, 4);
             panelContentHeader.Name = "panelContentHeader";
-            panelContentHeader.Size = new Size(923, 80);
+            panelContentHeader.Size = new Size(808, 60);
             panelContentHeader.TabIndex = 0;
             // 
             // lblContentHeader
@@ -205,25 +214,25 @@ namespace Library
             lblContentHeader.AutoSize = true;
             lblContentHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblContentHeader.ForeColor = Color.White;
-            lblContentHeader.Location = new Point(17, 20);
+            lblContentHeader.Location = new Point(15, 15);
             lblContentHeader.Name = "lblContentHeader";
-            lblContentHeader.Size = new Size(131, 37);
+            lblContentHeader.Size = new Size(105, 30);
             lblContentHeader.TabIndex = 0;
             lblContentHeader.Text = "Kho sách";
             // 
             // MainUserForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1152, 748);
+            ClientSize = new Size(1008, 561);
             Controls.Add(panelContent);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(1168, 784);
+            MinimumSize = new Size(1024, 548);
             Name = "MainUserForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Liberate";
+            FormClosed += MainUserForm_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvBooks).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -233,5 +242,6 @@ namespace Library
             panelContentHeader.PerformLayout();
             ResumeLayout(false);
         }
+        internal Button btnSignOut;
     }
 }

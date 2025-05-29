@@ -7,7 +7,6 @@ namespace Library
 {
     public partial class BorrowRequests : Form
     {
-        // Colors
         private readonly Color PrimaryColor = Color.FromArgb(0, 123, 255);
         private readonly Color SecondaryColor = Color.FromArgb(40, 44, 52);
 
@@ -83,6 +82,22 @@ namespace Library
                 dgvBooks.CurrentRow.Selected = false;
             else
                 dgvBooks.CurrentRow.Selected = true;
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                var f = new SignInForm();
+                f.Show();
+            }
+        }
+
+        private void BorrowRequests_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
